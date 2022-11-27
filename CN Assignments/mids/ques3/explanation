@@ -1,0 +1,10 @@
+Code follows the flowcharts made in the answer sheets
+
+AT opens unix domain sockets and connects with r1 r2 r3 round files
+AT also opens sfd that clients that connect to directly
+Whenever AT receives client, create a thread and redirect to thread function which sends fd to rounds in order to get scoring
+Rounds receive clients and score them and then send the score to Jury on a message queue with message type as client id
+Jury receives the scores and stores it
+On reaching max clients, it sends signal to AT to stop
+
+Unfortunately the Unix Domain Socket code does not work, because of which the fd is not getting sent and the data isnt received.
