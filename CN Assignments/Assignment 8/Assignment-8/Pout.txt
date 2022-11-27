@@ -1,3 +1,0 @@
-Sum: 3
-Difference: 1
-Product: 30
