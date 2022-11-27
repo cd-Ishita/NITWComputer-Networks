@@ -1,0 +1,1 @@
+cmd_/home/ishita/Computer-Networks/try/Module.symvers := sed 's/\.ko$$/\.o/' /home/ishita/Computer-Networks/try/modules.order | scripts/mod/modpost -m -a  -o /home/ishita/Computer-Networks/try/Module.symvers -e -i Module.symvers   -T -

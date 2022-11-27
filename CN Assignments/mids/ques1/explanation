@@ -1,0 +1,11 @@
+Code follows the flowcharts made in the answer sheets
+
+P opens FIFO1 and FIFO2 and sends data to FIFO1, at the end of data it send \d to FIFO1
+S also opens FIFO1 and FIFO2 as well as a Unix Domain Socket connection with A (this initialisation is where the problems with Unix Domain Sockets begins, after this all fds misbehave)
+S receives data from FIFO1 and prints until it gets \d 
+S then signals A to start scoring 
+A receives the FIFO2 fd 
+A has threads for judges that start scoring and send the data on FIFO2
+ 
+
+Unfortunately the Unix Domain Socket code does not work, because of which the fd is not getting sent and the data isnt received.
